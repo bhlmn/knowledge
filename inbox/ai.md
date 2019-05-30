@@ -1,6 +1,7 @@
 # ai
 
 * [librosa](http://librosa.github.io/librosa/) - a python package for music and audio analysis
+* Checkout [Google AI Education](https://ai.google/education).
 
 ## blog ideas
 
