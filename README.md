@@ -1,2 +1,2 @@
-# knwldg
+# knowledge
 what I know
