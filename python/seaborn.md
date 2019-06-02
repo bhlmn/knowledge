@@ -12,8 +12,10 @@ import matplotlib.pyplot as plt
 # random lists
 height = [45, 78, 23, 90, 55, 67]
 weight = [25, 67, 86, 36, 90, 86]
+
 # create the plot
 sns.scatterplot(x=weight, y=height)
+
 # show the plot
 plt.show()
 ```
