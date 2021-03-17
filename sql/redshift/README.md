@@ -49,3 +49,5 @@ where
 order by
     revenue desc;
 ```
+
+This will grab the highest grossing transaction for each customer, orderbed revenue and then the most recent transaction date. Note the `where` clause limits the query results to the highest grossing. If I didn't have that where clause it would just return everything with the `revenue_rank` included.
