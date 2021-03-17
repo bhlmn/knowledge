@@ -17,5 +17,7 @@ as (
         columnN
     from
         upstream_table
+    where
+        ...
 );
 ```
