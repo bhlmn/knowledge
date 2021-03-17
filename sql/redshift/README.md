@@ -30,24 +30,37 @@ order by
 But suppose I want to know the transaction date where the maximum revenue was received for each customer. This can get complicated, especially if that customer has had transactions that share the maximum value. One way to accomplish this is using the `row_number` window function, which will allow me to sort the transactions for each customer by revenue and assign each a number that I can filter on:
 
 ``` sql
+with
+    t
+as (
+    select
+        customer_id, 
+        transaction_id, 
+        transaction_date, 
+        revenue, 
+        row_number() over (
+            partition by 
+                customer_id
+            order by
+                revenue desc,
+                transaction_date desc
+        ) as revenue_rank
+    from
+        transactions
+)
+
 select
     customer_id, 
     transaction_id, 
     transaction_date, 
-    revenue, 
-    row_number() over (
-        partition by 
-            customer_id
-        order by
-            revenue desc,
-            transaction_date desc
-    ) as revenue_rank
+    revenue
 from
-    transactions
+    t
 where
     revenue_rank = 1
 order by
-    revenue desc;
+    revenue desc
+;
 ```
 
 This will grab the highest grossing transaction for each customer, orderbed revenue and then the most recent transaction date. Note the `where` clause limits the query results to the highest grossing. If I didn't have that where clause it would just return everything with the `revenue_rank` included.
