@@ -1,6 +1,6 @@
 # SQL
 
-This page is for SQL commands and code that is general across data warehousing and relational database systems (e.g., Redshift, BigQuery, MySQL, etc.). Commands that are system-specific are included in their respective folders (see [Redshift](/redshift/) and [BigQuery](/bigquery/)).
+This page is for SQL commands and code that is general across data warehousing and relational database systems (e.g., Redshift, BigQuery, MySQL, etc.). Commands that are system-specific are included in their respective folders (see [Redshift](/sql/redshift/) and [BigQuery](/sql/bigquery/)).
 
 ## Creating tables
 
